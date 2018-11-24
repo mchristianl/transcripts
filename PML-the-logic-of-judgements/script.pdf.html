@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>script.pdf.html</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.js"></script><script>document.addEventListener("DOMContentLoaded", function () {
+    var mathElements = document.getElementsByClassName("math");
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") { katex.render(texText.data, mathElements[i], { displayMode: mathElements[i].classList.contains("display"), throwOnError: false } );
+    }}});</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><em>typeset from <a href="http://archive-pml.github.io/martin-lof/pdfs/The-logic-of-judgements-1987.pdf">original PDF</a></em></p><style>
+hr {
+  page-break-before: always;
+}
+</style><p>22.2.1987</p><h1 id="the-logic-of-judgements">The Logic of Judgements</h1><p>Workshop on General Logic, Laboratory for Foundations of Computer Science, University of Edinburgh, 23-27 February 1987</p><p><br></p><style>
+.bmg, .tbmg {
+  border-bottom: 1px solid black;
+}
+.tbmg {
+  border-top: 1px solid black;
+}
+.pmlgrid {
+  display: grid;
+  grid-template: auto auto auto auto / auto auto auto;
+  white-space: nowrap;
+  width: auto;
+  grid-column-gap: 20px;
+  align-items: center;
+}
+.pmlgrid p {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+</style><div style="display: flex; justify-content: center;"><div class="pmlgrid"><div class="tbmg">type</br>object</div><div style="white-space: nowrap; text-align: center; line-height: 0.8; font-size: 80%; margin-top: -100%">judge-<br>ments<br>as<br>types<br><span style="font-size: 300%">←</span></div><div class="tbmg">judgement<br>proof</div><div style="padding-bottom: 0px">set<br>theory</div><div></div><div style="padding-bottom: 0px">logical<br>theory</div><div class="bmg">set<br>element</div><div style="white-space: nowrap; text-align: center; line-height: 0.8; font-size: 80%; margin-top: -50%"><span style="font-size: 300%">←</span><br>propo-<br>sitions<br>as<br>sets<br></div><div class="bmg">proposition<br>truth</div></div></div><p><br></p><p>P.M.-L, On the meanings of the logical constants and the justification of the logical laws</p><hr><p>Peter Schroeder-Heister, Judgements of higher levels and standardized rules for logical constants in Martin-Löf’s theory of logic, June 1985</p><p>The logical theory cannot be entirely logical since it needs at least one set for the quantifiers to ranger over.</p><p>Type formation</p><p><span class="math display">set:type</span></p><p><span class="math display">\frac{A:set}{elem(A):type}</span></p><p><span class="math display">\frac{
+\begin{array}{ccc}
+&amp;&amp;(x:\alpha)\\
+\alpha:type&amp;&amp;\beta:type
+\end{array}
+}{(fun\;x:\alpha)\beta:type}</span></p><p><span class="math inline">\begin{array}{ccc} &amp;&amp;\scriptsize\text{AUTOMATH}&amp;&amp;\\ &amp;&amp;\scriptsize\text{CONSTRUCTIONS}&amp;&amp;\scriptsize\text{LF}\\ &amp;&amp;\downarrow&amp;&amp;\downarrow\\ (x:\alpha)\beta&amp;=&amp;\lceil x:\alpha \rceil\beta&amp;=&amp;\Pi x:\alpha.\beta \end{array}</span></p><hr><p><span class="math inline">(\alpha)\beta=(x:\alpha)\beta\quad{\wedge} J\;\;\beta</span> does not depend on <span class="math inline">x</span></p><p>Object formation</p><p><span class="math display">\frac{\alpha:type}{x:\alpha}\quad\text{(assumption)}</span></p><p><span class="math display">\frac{\begin{matrix}
+(x:\alpha)\\
+b:\beta
+\end{matrix}}{\begin{array}{l}
+(x)b:(x:\alpha)\beta\\
+\lambda x:\alpha.b\quad{\scriptsize\longleftarrow\text{LF}}
+\end{array}
+}\quad\text{(abstraction)}</span></p><p><span class="math display">\frac{c:(x:\alpha)\beta\quad a:\alpha}{c(a):\beta(a/x)}\quad\text{(application)}</span></p><p>Equality</p><p><span class="math display">\frac{
+\begin{array}{ccc}
+&amp;&amp;(x:\alpha)\\
+a:\alpha&amp;&amp;b:\beta
+\end{array}
+}{((x)b)(a)\;=\;b(a/x):\beta(a/x)}\quad(\beta)</span></p><p><span class="math display">\frac{c:(x:\alpha)\beta}{c\;=\;(x)c(x):(x:\alpha)\beta}\quad(\eta)</span></p><p>refl., symm., trans.</p><p>equals for equals, spec.</p><p><span class="math display">\frac{a:\alpha\quad\alpha=\beta:type}{a:\beta}</span></p><p><span class="math display">\frac{a:elem(A)\quad A=B:set}{a:elem(B)}</span></p><hr><p><span class="math inline">\begin{matrix} \alpha:type&amp;&amp;\alpha=\beta:type\\ a:\alpha&amp;&amp;a=b:\alpha \end{matrix}</span></p><p>Since LF has no equality judgements, <span class="math inline">\alpha=\beta:type</span> has to be expressed by</p><p><span class="math display">\alpha,\beta:type,\quad\alpha=_{\beta\eta}\beta,</span></p><p>and <span class="math inline">a=b:\alpha</span> by</p><p><span class="math display">a,b:\alpha,\quad a=_{\beta\eta}b.</span></p><p>The equality judgements are badly needed for formalizing intuitionistic set theory in the logical framework.</p><p>A theory, like first order predicate logic or intuitionistic set theory, is specified by typing the constants which make up its signature and writing down the finitely many definitional equations that relate certain combinations of those constants.</p><p>In a sensible theory, it is decidable whether or not an expression is wellformed (meaningful) as well as whether or not two wellformed (meaningful) expressions are definitionally equal (have the same meaning).</p><p>type checking = checking the wellformedness (meaningfulness) of an expression</p><hr><p><span class="math display">prop:type</span></p><p><span class="math display">\frac{A:prop}{\begin{array}{c}
+proof(A):type\\
+A
+\end{array}}</span></p><p>In the propositions as sets interpretation, we put</p><p><span class="math display">prop=set:type</span><br />
+<span class="math display">proof(A)=elem(A):type</span></p><p>but it is not necessary for what follows that we have made that identification.</p><hr><p>Judgement formation</p><p><span class="math display">\frac{A:prop}{\begin{array}{l}
+A\;true:judg\\
+true(A)\\
+\phantom{true(}A
+\end{array}}</span></p><p><span class="math display">\frac{I:judg\quad J:judg}{\begin{array}{l}
+I|J:judg\\
+\;\rightarrow\quad{\scriptsize\text{(Gentzen)}}\\
+\;\Rightarrow\quad{\scriptsize\text{(Schroeder-Heister)}}\\
+\;\vdash\;\quad{\scriptsize\text{(LF)}}\\
+\end{array}}</span></p><p><span class="math display">\frac{\begin{array}{l}
+&amp;&amp;(x:\alpha)\\
+\alpha:type&amp;&amp;J:Judg
+\end{array}
+}{\begin{array}{l}
+|_{x:\alpha} J:judg\\
+\rightarrow_{x:\alpha}\\
+\Rightarrow_{x:\alpha}\\
+\vdash_{x:\alpha}\\
+\end{array}}</span></p><hr><p>Proof rules</p><p><span class="math display">\frac{J:judg}{J}\quad\text{(assumption)}</span></p><p><span class="math display">\frac{\begin{array}{c}
+(I)\\
+J
+\end{array}}{
+I|J
+}
+\quad\quad
+\frac{I|J\quad I}{J}</span></p><p><span class="math display">\frac{\begin{array}{c}
+(x:\alpha)\\
+J
+\end{array}}{
+|_{x:\alpha}J
+}
+\quad\quad
+\frac{|_{x:\alpha}J\quad a:\alpha}{J(a/x)}</span></p><p>A context (sequence of assumptions) in this system has the form</p><p><span class="math display">x_1:\alpha_1,...,x_m:\alpha_m,\underbrace{J_1,...,J_n}_{\text{permutable}}</span></p><hr><p>Judgements as types</p><p><span class="math display">judg=type</span><br />
+<span class="math display">true(A)=proof(A)</span><br />
+<span class="math display">I|J=(I)J</span><br />
+<span class="math display">|_{x:\alpha}J=(x:\alpha)J</span></p><p>With a proof of <span class="math inline">J</span> by means of the proof rules above, we can associate an object</p><p><span class="math display">{\scriptsize\text{proof object}\longrightarrow}\underbrace{c\;:\;\underbrace{J}_{\small\text{synthetic judgement}}}_{\small\text{analytic judgement}}</span></p><hr><p>Generalized logical operations</p><p><span class="math display">\frac{\begin{matrix}
+&amp;&amp;(A\;true)\\
+A\;prop&amp;&amp;B\;prop
+\end{matrix}}{\begin{array}{l}
+A\supset B\;prop\\
+\phantom{A}\,\&amp;
+\end{array}}</span></p><p>The ordinary implication and conjunction are easy enough to type</p><p><span class="math display">\begin{array}{ccc}
+\supset&amp;:&amp;(prop)(prop)prop\\
+\&amp;&amp;:&amp;-\;\,&quot;\;-
+\end{array}</span></p><p>but how do we type the generalized implication and conjunction?</p><p>Type formation</p><p><span class="math display">\frac{\begin{matrix}
+&amp;&amp;(I)\\
+I:judg&amp;&amp;\beta:type
+\end{matrix}}{I|\beta:type}</span></p><hr><p><span class="math display">\begin{array}{ccl}
+\supset&amp;:&amp;(X:prop)(X|prop)prop\\
+\&amp;&amp;:&amp;\phantom{(X:prop)(}X\;true\\
+&amp;&amp;\phantom{(X:prop)(}true(X)
+\end{array}</span></p><p>Object formation</p><p><span class="math display">\frac{\begin{matrix}
+(I)\\
+b:\beta
+\end{matrix}}{b:I|\beta}
+\quad\quad
+\frac{b:I|\beta\quad I}{b:\beta}</span></p><p><span class="math display">\frac{
+\begin{matrix}\\A:prop\end{matrix}
+\quad
+\frac{\displaystyle\begin{matrix}
+(A\;true)\\
+B:prop
+\end{matrix}}{\displaystyle B:A\;true|prop}
+}{\begin{array}{l}
+A\supset B:prop\\
+\phantom{A}\;\&amp;
+\end{array}}</span></p>
+</body>
+</html>
